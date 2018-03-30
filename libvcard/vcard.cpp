@@ -210,6 +210,7 @@ QList<vCard> vCard::fromByteArray(const QByteArray& data)
         else if ((line == VC_END_TOKEN) && started)
         {
             vcards.append(current);
+            current = vCard(); // a new empty one
             started = false;
         }
 
